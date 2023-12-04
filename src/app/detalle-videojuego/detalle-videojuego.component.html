@@ -1,4 +1,3 @@
-<!-- src/app/detalle-videojuego/detalle-videojuego.component.html -->
 <div *ngIf="videojuego">
   <h2>Detalles del Videojuego</h2>
   <table>
@@ -19,9 +18,7 @@
       <td>{{ videojuego.media }}</td>
     </tr>
   </table>
-  <!-- Comentar la imagen
-  <img [src]="videojuego.imagen" alt="{{ videojuego.titulo }}">
-  -->
+
   <div class="imagen">
     <img [src]="'assets/img/' + videojuego.imagen" alt="{{ videojuego.titulo }}">
   </div>

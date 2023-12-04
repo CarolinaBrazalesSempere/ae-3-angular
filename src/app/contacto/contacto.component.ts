@@ -1,4 +1,3 @@
-// src/app/contacto/contacto.component.ts
 import { Component } from '@angular/core';
 
 export class Contacto {

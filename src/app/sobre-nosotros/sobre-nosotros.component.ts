@@ -1,4 +1,3 @@
-// src/app/sobre-nosotros/sobre-nosotros.component.ts
 import { Component } from '@angular/core';
 
 export class SobreNosotros {
