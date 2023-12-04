@@ -1,65 +1,60 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface Usuario {
+  user: string;
+  contrasena: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  userName: string;
-  password: string;
-  errorInfo = false;
-  errorName = false;
-  errorLogin = false;
-
-  constructor(private router: Router) {
-    this.userName = '';
-    this.password = '';
-  }
-
-  users = [
-    { nombre: 'Carol', password: '1234' },
-    { nombre: 'Saioa', password: '2345' },
-    { nombre: 'Joan', password: '12345' },
+  usuarios: Usuario[] = [
+    { user: 'Sergio', contrasena: '1234' },
+    { user: 'Marina', contrasena: '1234' },
   ];
 
-  public validateForm() {
-    let errorForm = false; //variable de control de error
+  // Propiedades para almacenar el usuario y la contraseña introducidos
 
-    if (this.userName.trim().length == 0) {
-      this.errorName = true;
-      errorForm = true; //si entra aquí porque hay errores será true y se mostrará el mensaje de error
-    }
+  user: string = '';
+  contrasena: string = '';
 
-    if (this.password.trim().length < 3) {
-      this.errorInfo = true;
-      errorForm = true;
-    }
+  // Mensaje de error para mostrar
+  errorMessage: string = '';
 
-    return errorForm;
-  }
+  // Constructor del componente con inyección de dependencia de Router.
+  constructor(private router: Router) {}
 
-  public login() {
-    if (!this.validateForm()) {
-      // Si no hay errores en el formulario
-      let userFound = false; // Variable para controlar si se encuentra el usuario
+  // Método para realizar la autenticación al hacer clic en el botón "Iniciar Sesión"
 
-      for (let user of this.users) {
-        if (
-          this.userName.trim() === user.nombre &&
-          this.password.trim() === user.password
-        ) {
-          userFound = true;
-          this.router.navigateByUrl(`/videogames?userName=${this.userName}`);
-          break; // Salimos del bucle una vez encontrada la coincidencia
-        }
+  login() {
+    const user = this;
+
+    // Verificar si se han ingresado usuario y contraseña
+    // y buscar el usuario en el array de usuarios.
+
+    if (this.user && this.contrasena) {
+      const usuarioValido = this.usuarios.find(function (u) {
+        return u.user == user.user && u.contrasena == user.contrasena;
+      });
+
+      // Si el usuario es válido, almacenar el nombre de usuario en sessionStorage 
+      // y redirigir a la página de videojuegos.
+      if (usuarioValido) {
+        sessionStorage.setItem('userName', this.user);
+        this.router.navigate(['/videojuegos']);
+
+        // Mostrar mensaje de error si el usuario no es válido
+      } else {
+        this.errorMessage = 'Usuario o contraseña incorrecta';
       }
 
-      if (!userFound) {
-        this.router.navigate(['/login']);
-        this.errorLogin = true;
-      }
+      // Mostrar mensaje de error si no se han completado todos los campos
+    } else {
+      this.errorMessage = 'Por favor, completa todos los campos';
     }
   }
 }

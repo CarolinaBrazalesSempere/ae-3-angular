@@ -1,14 +1,27 @@
-<section class="container">
-    <div class="login-item">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" [(ngModel)]="userName" type="text">
-        <p *ngIf="errorName">El nombre es incorrecto</p>
-    </div>
-    <div class="login-item">
-        <label for="password">Contraseña</label>
-        <input id="password" [(ngModel)]="password" type="password">
-        <p *ngIf="errorInfo">La contraseña no es válida</p>
-    </div>
-    <button (click)="login()">Login</button>
-    <p *ngIf="errorLogin">No se ha podido acceder</p>
-</section>
+<div id="container">
+  <form (submit)="login()">
+    <h2>Iniciar Sesión</h2>
+
+    <!-- Campos para introducir los datos de usuario con enlace bidireccional [(ngModel)] -->
+    <label for="nombre">Nombre de Usuario:</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="user" required />
+    <label for="contraseña">Contraseña:</label>
+    <input
+      type="password"
+      id="contraseña"
+      name="contraseña"
+      [(ngModel)]="contrasena"
+      required
+    />
+
+    <!-- Mostrar mensaje de error si se produce -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+
+  <div id="datos">
+    <p>Los datos de acceso son:</p>
+    <p>Usuarios: Sergio/Marina</p>
+    <p>Contraseña: 1234 para ambos</p>
+  </div>
+</div>
