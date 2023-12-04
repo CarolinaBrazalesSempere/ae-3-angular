@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+ body{
+  color: white;
+  background-image: url('app/img/fondo2.jpg');
+  background-size: 100%;
+}
+
+nav{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+
+}
+a:visited{
+  color: inherit;
+}

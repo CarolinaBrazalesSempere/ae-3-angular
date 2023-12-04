@@ -1,0 +1,28 @@
+<h1 class="titulo">Listado de Videojuegos</h1>
+
+<h3>Usuario : </h3>
+<h4 class="pincha ">Pincha en uno de los videojuegos para ver los detalles</h4>
+<div class="tabla">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Valoración Media</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of listaVideojuegos"
+      [routerLink]="['/verDetalles', v.id, v.titulo,v.compania, v.imagen, v.valoracion ]"
+      [queryParams]="{ 'imagen': v.imagen ? v.imagen.toString() : '', 'titulo': v.titulo, 'compania': v.compania, 'valoracion': v.valoracion }">
+    <td>{{ v.id }}</td>
+    <td>{{ v.titulo }}</td>
+    <td>{{ v.valoracion }}</td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+

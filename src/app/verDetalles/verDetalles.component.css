@@ -1,0 +1,62 @@
+
+
+.grid{
+  display: grid;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.518);
+  color: black;
+}
+
+.titulo{
+  text-decoration: underline overline;
+  color: rgb(0, 0, 0);
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.id{
+  margin-top: -30px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.compania{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.valoracion{
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+img{
+  width: 450px;
+  grid-column: 3/4;
+  grid-row: 1/5;
+}
+
+.detalles{
+  text-align: center;
+  position: relative;
+}
+
+.volver{
+  margin-top: 20px;
+}
+
+.volver a{
+  border-radius: 8px;
+  padding: 5px;
+  font-size: larger;
+}
+
+.volver a:hover{
+  background-color: white;
+  color: black;
+}
+
+.boton{
+  margin-top: 30px;
+  border: 1px solid;
+}
