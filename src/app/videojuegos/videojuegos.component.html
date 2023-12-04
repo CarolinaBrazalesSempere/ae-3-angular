@@ -1,0 +1,24 @@
+<!-- src/app/videojuegos/videojuegos.component.html -->
+<div>
+  <h2>Videojuegos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Valoración</th>
+        <th>Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let videojuego of videojuegos">
+        <td>{{ videojuego.id }}</td>
+        <td>{{ videojuego.titulo }}</td>
+        <td>{{ videojuego.media }}</td>
+        <td>
+          <button (click)="verDetalle(videojuego.id)">Ver Detalles</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+    margin-top: 24px;
+  }
+  
+
+table {
+    width: auto;
+    border-collapse: collapse;
+    margin-top: 24px;
+    margin: 0 auto;
+  }
+  
+  th, td {
+    border: 8px solid rgb(40, 40, 120);
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .titulo {
+    background-color: rgb(42, 138, 174);
+  }
+
+  .imagen {
+    margin-top: 24px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .imagen img {
+    width: 100%; 
+    max-width: 620px; 
+    height: auto;
+  }
+
+
+  
