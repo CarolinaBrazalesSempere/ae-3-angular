@@ -1,0 +1,30 @@
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+button {
+  width: 100%;
+  background-color: rgb(196, 196, 196);
+  color: black;
+  padding: 8px;
+  border: none;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.login-item {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: white;
+  border: none;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: black;
+}

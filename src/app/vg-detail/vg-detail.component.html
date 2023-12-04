@@ -1,0 +1,10 @@
+<section class="card-container">
+    <div class="video-card">
+        <img [src]="image" alt="">
+        <p>Id: <span>{{id}}</span></p>
+        <p>Nombre: <span>{{title}}</span></p>
+        <p>Compañía: <span>{{company}}</span></p>
+        <p>Valoración: <span>{{rate}}</span></p>
+    </div>
+</section>
+<a [routerLink]="['/videogames']" [queryParams]="{userName: userName}">Volver</a>

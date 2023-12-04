@@ -1,0 +1,14 @@
+<h1>Gameland Store</h1>
+<p>Hola <span>{{userName}}</span></p>
+<section class="card-container">
+    <div *ngFor="let vg of videojuegos" class="video-card">
+        <p>Id <span>{{vg.id}}</span></p>
+        <img *ngIf="!show" [src]="vg.image" alt="{{title}}">
+        <p>Nombre: <span>{{vg.title}}</span></p>
+        <p *ngIf="!show">Compañía: <span>{{vg.company}}</span></p>
+        <p>Valoración: <span>{{vg.rate}}</span></p>
+        <button [routerLink]="['/videogame-detail', vg.id]"
+            [queryParams]="{img: vg.image ? vg.image.toString() : '', title: vg.title,company: vg.company, rate: vg.rate, userName}">Más
+            detalles</button>
+    </div>
+</section>
